@@ -44,7 +44,7 @@ func beBytes(v any) []byte {
 				ok    = true
 				bytes = make([]byte, rv.Len())
 			)
-			for i, _ := range bytes {
+			for i := range bytes {
 				int32Value := beInt32(rv.Index(i).Interface())
 				if int32Value < 0 || int32Value > math.MaxUint8 {
 					ok = false
