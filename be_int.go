@@ -7,47 +7,47 @@ import (
 )
 
 // Int converts `v` to int.
-func beInt(v any) int {
-	if v == nil {
+func beInt(av any) int {
+	if av == nil {
 		return 0
 	}
-	if v, ok := v.(int); ok {
+	if v, ok := av.(int); ok {
 		return v
 	}
-	return int(beInt64(v))
+	return int(beInt64(av))
 }
 
 // Int8 converts `v` to int8.
-func beInt8(v any) int8 {
-	if v == nil {
+func beInt8(av any) int8 {
+	if av == nil {
 		return 0
 	}
-	if v, ok := v.(int8); ok {
+	if v, ok := av.(int8); ok {
 		return v
 	}
-	return int8(beInt64(v))
+	return int8(beInt64(av))
 }
 
 // Int16 converts `v` to int16.
-func beInt16(v any) int16 {
-	if v == nil {
+func beInt16(av any) int16 {
+	if av == nil {
 		return 0
 	}
-	if v, ok := v.(int16); ok {
+	if v, ok := av.(int16); ok {
 		return v
 	}
-	return int16(beInt64(v))
+	return int16(beInt64(av))
 }
 
 // Int32 converts `v` to int32.
-func beInt32(v any) int32 {
-	if v == nil {
+func beInt32(av any) int32 {
+	if av == nil {
 		return 0
 	}
-	if v, ok := v.(int32); ok {
+	if v, ok := av.(int32); ok {
 		return v
 	}
-	return int32(beInt64(v))
+	return int32(beInt64(av))
 }
 
 // Int64 converts `v` to int64.

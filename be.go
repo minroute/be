@@ -40,27 +40,31 @@ func Int64(v any) int64 {
 	return beInt64(v)
 }
 
-//
-//// Uint converts and returns `v` as uint.
-//func Uint(v any) uint {
-//}
-//
-//// Uint8 converts and returns `v` as uint8.
-//func Uint8(v any) uint8 {
-//}
-//
-//// Uint16 converts and returns `v` as uint16.
-//func Uint16(v any) uint16 {
-//}
-//
-//// Uint32 converts and returns `v` as uint32.
-//func Uint32(v any) uint32 {
-//}
-//
-//// Uint64 converts and returns `v` as uint64.
-//func Uint64(v any) uint64 {
-//}
-//
+// Uint converts and returns `v` as uint.
+func Uint(v any) uint {
+	return beUint(v)
+}
+
+// Uint8 converts and returns `v` as uint8.
+func Uint8(v any) uint8 {
+	return beUint8(v)
+}
+
+// Uint16 converts and returns `v` as uint16.
+func Uint16(v any) uint16 {
+	return beUint16(v)
+}
+
+// Uint32 converts and returns `v` as uint32.
+func Uint32(v any) uint32 {
+	return beUint32(v)
+}
+
+// Uint64 converts and returns `v` as uint64.
+func Uint64(v any) uint64 {
+	return beUint64(v)
+}
+
 // Float32 converts and returns `v` as float32.
 func Float32(v any) float32 {
 	return beFloat32(v)
