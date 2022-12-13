@@ -2,6 +2,6 @@ package be
 
 import "database/sql"
 
-func beNullFloat64() *sql.NullFloat64 {
+func beNullByte() *sql.NullByte {
 	return nil
 }

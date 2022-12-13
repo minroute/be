@@ -5,6 +5,12 @@ package be
 
 import "database/sql"
 
+//
+// 以下定义一批常规类型接口，用来检测某个变量是否实现了某个接口。方便转换的时候做客制化
+// 例子：如某个变量实现了 iString 接口，那么beString方法将调用 iString.String方法来获取字符串。
+//
+//
+
 // iString is used for type assert api for String().
 type iString interface {
 	String() string
@@ -103,7 +109,42 @@ type iSet interface {
 	Set(value interface{}) (old interface{})
 }
 
+//
+// 以下定义一批Null类型的接口，用来检测某个变量是否实现了某个接口。方便转换的时候做客制化
+// 如某个变量实现了 iNullString 接口，那么beNullString方法将调用 iNullString.NullString方法来获取字符串。
+//
+//
 // iNullString is the interface for custom value assignment.
 type iNullString interface {
 	NullString() *sql.NullString
+}
+
+// iNullBool is the interface for custom value assignment.
+type iNullBool interface {
+	NullBool() *sql.NullBool
+}
+
+// iNullInt64 is the interface for custom value assignment.
+type iNullInt64 interface {
+	NullInt64() *sql.NullInt64
+}
+
+type iNullInt32 interface {
+	NullInt32() *sql.NullInt32
+}
+
+type iNullInt16 interface {
+	NullInt16() *sql.NullInt16
+}
+
+type iNullFloat64 interface {
+	NullFloat64() *sql.NullFloat64
+}
+
+type iNullTime interface {
+	NullTime() *sql.NullTime
+}
+
+type iNullByte interface {
+	NullByte() *sql.NullByte
 }
