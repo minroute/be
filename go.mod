@@ -1,3 +1,3 @@
-module github.com/xiiapp/be
+module github.com/minroute/be
 
 go 1.18

@@ -3,6 +3,8 @@
 
 package be
 
+import "database/sql"
+
 // iString is used for type assert api for String().
 type iString interface {
 	String() string
@@ -99,4 +101,9 @@ type iUnmarshalJSON interface {
 // iSet is the interface for custom value assignment.
 type iSet interface {
 	Set(value interface{}) (old interface{})
+}
+
+// iNullString is the interface for custom value assignment.
+type iNullString interface {
+	NullString() *sql.NullString
 }
