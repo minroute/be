@@ -94,6 +94,14 @@ func IsSlice(v any) bool {
 	return false
 }
 
+// IsSlicePtr 判断类型是否是切片指针
+func IsSlicePtr(v any) bool {
+	if reflect.TypeOf(v).Kind() == reflect.Ptr && reflect.ValueOf(v).Elem().Kind() == reflect.Slice {
+		return true
+	}
+	return false
+}
+
 // IsMap 判断类型是否是Map
 func IsMap(v any) bool {
 	if reflect.TypeOf(v).Kind() == reflect.Map {

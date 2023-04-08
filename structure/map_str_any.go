@@ -12,20 +12,18 @@ type (
 
 func (s *StrAnyMap) IsMe() {}
 
-// IsStrAnyMapFromPtr 判断是否是StrAnyMap的指针,
-// @usage: IsStrAnyMapFromPtr(&StrAnyMap{"a": 1})
-func IsStrAnyMapFromPtr(d any) bool {
-	if _, ok := any(d).(StrAnyMapIf); ok {
-		return true
-	}
-	return false
-}
-
 // IsStrAnyMap 判断是否是StrAnyMap,
 // @usage: IsStrAnyMap(StrAnyMap{"a": 1})
+// @usage: IsStrAnyMap(&StrAnyMap{"a": 1})
 func IsStrAnyMap(d any) bool {
-	if _, ok := any(d).(*StrAnyMap); ok {
-		return true
+	if IsPtr(d) {
+		if _, ok := any(d).(*StrAnyMap); ok {
+			return true
+		}
+	} else {
+		if _, ok := any(d).(StrAnyMap); ok {
+			return true
+		}
 	}
 	return false
 }
