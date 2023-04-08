@@ -1,3 +1,6 @@
+// Package be
+// @Description: 基本类型的转换方法
+//
 package be
 
 // Bytes converts and returns `v` as []byte.

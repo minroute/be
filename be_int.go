@@ -94,7 +94,7 @@ func beInt64(v any) int64 {
 	case []byte:
 		var x int32
 		bytesBuffer := bytes.NewBuffer(value)
-		binary.Read(bytesBuffer, binary.BigEndian, &x) //大端模式
+		binary.Read(bytesBuffer, binary.BigEndian, &x) // 大端模式
 		return int64(x)
 
 	// @todo：map、slice、struct转int64，此处并为处理

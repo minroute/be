@@ -86,12 +86,12 @@ func beUint64(any interface{}) uint64 {
 		}
 		return 0
 	case []byte:
-		//return gbinary.DecodeTobint64(value)
+		// return gbinary.DecodeTobint64(value)
 		var x int32
 		bytesBuffer := bytes.NewBuffer(value)
-		binary.Read(bytesBuffer, binary.BigEndian, &x) //大端模式
+		binary.Read(bytesBuffer, binary.BigEndian, &x) // 大端模式
 		return uint64(x)
-		//@todo:return调用了unint64 。这里的代码需要进一步核对。
+		// @todo:return调用了unint64 。这里的代码需要进一步核对。
 
 	default:
 		if f, ok := value.(iUint64); ok {
